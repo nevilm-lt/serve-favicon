@@ -70,11 +70,11 @@ function favicon (path, options) {
     }
 
     if (req.method !== 'GET' && req.method !== 'HEAD') {
-      res.statusCode = req.method === 'OPTIONS' ? 200 : 405
-      res.setHeader('Allow', 'GET, HEAD, OPTIONS')
-      res.setHeader('Content-Length', '0')
-      res.end()
-      return
+      res.statusCode = req.method === 'OPTIONS' ? 200 : 405;
+      res.setHeader('Allow', 'GET, HEAD, OPTIONS');
+      res.setHeader('Content-Length', '0');
+      res.end();
+      return;
     }
 
     if (icon) {

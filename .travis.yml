@@ -8,10 +8,15 @@ node_js:
   - "3.3"
   - "4.9"
   - "5.12"
-  - "6.14"
-  - "7.10"
-  - "8.11"
-  - "9.11"
+  - "6.10"
+  - "7.7"
+matrix:
+  include:
+    - node_js: "8.0"
+      env: "NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly"
+  allow_failures:
+    # Allow the nightly installs to fail
+    - env: "NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly"
 sudo: false
 cache:
   directories:

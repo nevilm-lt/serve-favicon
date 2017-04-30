@@ -273,9 +273,9 @@ describe('favicon()', function () {
         var server = createServer(buffer)
 
         request(server)
-          .get('/favicon.ico')
-          .expect('Content-Length', '20')
-          .expect(200, buffer, done)
+        .get('/favicon.ico')
+        .expect('Content-Length', '20')
+        .expect(200, buffer, done)
       })
 
       it('should be copied', function (done) {
@@ -287,9 +287,9 @@ describe('favicon()', function () {
         assert.equal(buffer.toString(), '????????????????????')
 
         request(server)
-          .get('/favicon.ico')
-          .expect('Content-Length', '20')
-          .expect(200, Buffer.from('####################'), done)
+        .get('/favicon.ico')
+        .expect('Content-Length', '20')
+        .expect(200, Buffer.from('####################'), done)
       })
     })
   })

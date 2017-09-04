@@ -112,37 +112,37 @@ describe('favicon()', function () {
 
     it('should serve icon', function (done) {
       request(this.server)
-        .get('/favicon.ico')
-        .expect('Content-Type', 'image/x-icon')
-        .expect(200, done)
+      .get('/favicon.ico')
+      .expect('Content-Type', 'image/x-icon')
+      .expect(200, done)
     })
 
     it('should include cache-control', function (done) {
       request(this.server)
-        .get('/favicon.ico')
-        .expect('Cache-Control', /public/)
-        .expect(200, done)
+      .get('/favicon.ico')
+      .expect('Cache-Control', /public/)
+      .expect(200, done)
     })
 
     it('should include strong etag', function (done) {
       request(this.server)
-        .get('/favicon.ico')
-        .expect('ETag', /^"[^"]+"$/)
-        .expect(200, done)
+      .get('/favicon.ico')
+      .expect('ETag', /^"[^"]+"$/)
+      .expect(200, done)
     })
 
     it('should deny POST', function (done) {
       request(this.server)
-        .post('/favicon.ico')
-        .expect('Allow', 'GET, HEAD, OPTIONS')
-        .expect(405, done)
+      .post('/favicon.ico')
+      .expect('Allow', 'GET, HEAD, OPTIONS')
+      .expect(405, done)
     })
 
     it('should understand OPTIONS', function (done) {
       request(this.server)
-        .options('/favicon.ico')
-        .expect('Allow', 'GET, HEAD, OPTIONS')
-        .expect(200, done)
+      .options('/favicon.ico')
+      .expect('Allow', 'GET, HEAD, OPTIONS')
+      .expect(200, done)
     })
 
     it('should 304 when If-None-Match matches', function (done) {
@@ -173,22 +173,15 @@ describe('favicon()', function () {
 
     it('should ignore non-favicon requests', function (done) {
       request(this.server)
-        .get('/')
-        .expect(404, 'oops', done)
+      .get('/')
+      .expect(404, 'oops', done)
     })
 
     it('should work with query string', function (done) {
       request(this.server)
-        .get('/favicon.ico?v=1')
-        .expect('Content-Type', 'image/x-icon')
-        .expect(200, done)
-    })
-
-    describe('missing req.url', function () {
-      it('should ignore the request', function (done) {
-        var fn = favicon(ICON_PATH)
-        fn({}, {}, done)
-      })
+      .get('/favicon.ico?v=1')
+      .expect('Content-Type', 'image/x-icon')
+      .expect(200, done)
     })
   })
 

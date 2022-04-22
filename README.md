@@ -5,7 +5,6 @@
 [![Linux Build][travis-image]][travis-url]
 [![Windows Build][appveyor-image]][appveyor-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
-[![Gittip][gittip-image]][gittip-url]
 
 Node.js middleware for serving a favicon.
 
@@ -135,5 +134,3 @@ server.listen(3000)
 [coveralls-url]: https://coveralls.io/r/expressjs/serve-favicon?branch=master
 [downloads-image]: https://img.shields.io/npm/dm/serve-favicon.svg
 [downloads-url]: https://npmjs.org/package/serve-favicon
-[gittip-image]: https://img.shields.io/gittip/dougwilson.svg
-[gittip-url]: https://www.gittip.com/dougwilson/
